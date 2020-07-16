@@ -39,8 +39,8 @@ class Wagon {
     totalFood() {
         let totalFood = 0
         for (let index = 0; index < this.passengers.length; index++) {
-            const totalPassengers = this.passengers[index].food;
-            return totalPassengers + totalFood
+            totalFood += this.passengers[index].food;
         }
+        return totalFood
     }
 }
