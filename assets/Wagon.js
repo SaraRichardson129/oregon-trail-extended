@@ -1,21 +1,3 @@
-class Traveler {
-    constructor(name) {
-        this.name = name
-        this.food = 1
-        this.isHealthy = true
-    }
-    hunt() {
-        return this.food += 2
-    }
-    eat() {
-        if (this.food <= 0) {
-            return this.isHealthy = false
-        } else {
-            return this.food -= 1
-        }
-    }
-}
-
 class Wagon {
     constructor(capacity) {
         this.capacity = capacity
@@ -30,11 +12,8 @@ class Wagon {
         }
     }
     shouldQuarantine() {
-        if (this.passengers === this.isHealthy) {
-            return false
-        } else {
-            return true
-        }
+        return this.passengers.some(passenger => passenger.isHealthy === false)
+
     }
     totalFood() {
         let totalFood = 0
